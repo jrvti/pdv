@@ -4,7 +4,13 @@ interface User {
 }
 
 // Array para armazenar os usuários
-const users: User[] = [];
+let users: User[] = [];
+
+// Carrega usuários do localStorage
+const storedUsers = localStorage.getItem('users');
+if (storedUsers) {
+    users = JSON.parse(storedUsers);
+}
 
 // Função para registrar o usuário
 function registerUser (username: string, password: string, confirmPassword: string): void {
@@ -14,8 +20,8 @@ function registerUser (username: string, password: string, confirmPassword: stri
         return;
     }
 
-    // Verifica se o usuário já existe
-    const existingUser  = users.find(user => user.username === username);
+    // Verifica se o usuário já existe (normalizando a comparação)
+    const existingUser  = users.find(user => user.username.toLowerCase() === username.toLowerCase());
     if (existingUser ) {
         alert("Usuário já cadastrado.");
         return;
@@ -24,6 +30,9 @@ function registerUser (username: string, password: string, confirmPassword: stri
     // Adiciona o novo usuário ao array
     users.push({ username, password });
     alert("Usuário cadastrado com sucesso!");
+
+    // Armazena os usuários no localStorage
+    localStorage.setItem('users', JSON.stringify(users));
 
     // Limpa os campos do formulário após o cadastro
     (document.getElementById('username') as HTMLInputElement).value = '';
