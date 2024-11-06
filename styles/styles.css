@@ -45,6 +45,7 @@ button {
     border-radius: 5px; /* Bordas arredondadas */
     cursor: pointer; /* Muda o cursor para indicar que é clicável */
     font-size: 16px; /* Tamanho da fonte */
+    margin-top: 7px;
 }
 
 /* Efeito de hover para o botão */
