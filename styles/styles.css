@@ -39,7 +39,7 @@ input[type="password"] {
 button {
     width: 100%; /* Largura total do contêiner */
     padding: 10px; /* Espaçamento interno */
-    background-color: #28a745; /* Cor de fundo verde */
+    background-color: #007bff; /* Cor de fundo verde */
     color: white; /* Cor do texto */
     border: none; /* Remove a borda padrão */
     border-radius: 5px; /* Bordas arredondadas */
@@ -49,5 +49,5 @@ button {
 
 /* Efeito de hover para o botão */
 button:hover {
-    background-color: #218838; /* Cor de fundo mais escura ao passar o mouse */
+    background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
 }
